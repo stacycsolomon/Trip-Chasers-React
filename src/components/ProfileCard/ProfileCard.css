@@ -15,8 +15,7 @@
 }
 
 .ProfileImages>img {
-    width: 6rem;
-    /* border-radius: 50%; */
+    width: 12rem;
     position: absolute;
     bottom: -12rem;
     clip-path: circle(50%);

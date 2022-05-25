@@ -4,7 +4,7 @@ import './RightSide.css'
 const RightSide = () => {
   return (
     <div className="rightside">
-        feed
+        Right Side
     </div>
   )
 }
