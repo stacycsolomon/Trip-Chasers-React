@@ -37,7 +37,7 @@ class ShowPost extends Component {
     const { match, user, msgAlert, history } = this.props
 
     deletePost(match.params.id, user)
-      .then(() => history.push('/posts'))
+      .then(() => history.push('/home'))
       .then(() => {
         msgAlert({
           heading: 'Deleted post successfully',

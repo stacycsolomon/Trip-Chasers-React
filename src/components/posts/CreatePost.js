@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { createPost } from '../../api/post'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 
 class CreatePost extends Component {
   constructor (props) {
@@ -27,7 +27,7 @@ class CreatePost extends Component {
 	  const { user, msgAlert, history } = this.props
 
 	  createPost(this.state, user)
-	    .then(() => history.push('/posts'))
+	    .then(() => history.push('/home'))
 	    .then(() => {
 	      msgAlert({
 	        heading: 'New Post created',
@@ -42,10 +42,9 @@ class CreatePost extends Component {
 	        variant: 'danger'
 	      })
 	    })
-	  this.setState({
-	    description: '',
-	    img: ''
-	  })
+	  if (this.state.description) {
+	    return <Redirect to={'/posts'} />
+	  }
 	}
 
 	render () {
@@ -62,6 +61,11 @@ class CreatePost extends Component {
 	          onChange={this.handleChange}
 	        />
 	      </Form.Group>
+	        <div className='pictures'>
+	          <img src={this.state.img} />
+	          <p>Add Image</p>
+	          <input type='url' name='img' placeholder='share url link to upload images' onChange={this.handleChange} />
+	        </div>
 	      <Button type='submit'>Submit</Button>
 	    </Form>
 	    </>
