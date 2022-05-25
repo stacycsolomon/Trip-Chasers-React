@@ -11,7 +11,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import CreatePost from './components/posts/CreatePost'
 import IndexPost from './components/posts/IndexPost'
-// import Home from './home/home'
+import Home from './home/home'
 import UpdatePost from './components/posts/UpdatePost'
 import ShowPost from './components/posts/ShowPost'
 import MyPosts from './components/posts/MyPosts'
@@ -75,6 +75,11 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
+            path='/home'
+            render={() => <Home msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
             path='/sign-out'
             render={() => (
               <SignOut
@@ -102,6 +107,12 @@ class App extends Component {
             path='/posts'
             render={() => <IndexPost msgAlert={this.msgAlert} user={user} />}
           />
+          {/* <AuthenticatedRoute
+            user={user}
+            exact
+            path='/posts'
+            render={() => <IndexPost msgAlert={this.msgAlert} user={user} />}
+          /> */}
           <AuthenticatedRoute
             user={user}
             path='/posts/:id/edit'
@@ -117,9 +128,7 @@ class App extends Component {
             user={user}
             exact
             path='/my-posts'
-            render={() => (
-              <MyPosts msgAlert={this.msgAlert} user={user} />
-            )}
+            render={() => <MyPosts msgAlert={this.msgAlert} user={user} />}
           />
           {/* <Home /> */}
         </main>
