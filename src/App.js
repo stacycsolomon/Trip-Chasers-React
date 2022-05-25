@@ -2,7 +2,6 @@
 import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
-
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
@@ -10,6 +9,12 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import CreatePost from './components/posts/CreatePost'
+import IndexPost from './components/posts/IndexPost'
+import Home from './home/home'
+import UpdatePost from './components/posts/UpdatePost'
+import ShowPost from './components/posts/ShowPost'
+import MyPosts from './components/posts/MyPosts'
 
 class App extends Component {
   constructor (props) {
@@ -44,8 +49,8 @@ class App extends Component {
 
     return (
       <Fragment>
-	      <Header user={user} />
-	      {msgAlerts.map((msgAlert) => (
+        <Header user={user} />
+        {msgAlerts.map((msgAlert) => (
           <AutoDismissAlert
             key={msgAlert.id}
             heading={msgAlert.heading}
@@ -55,8 +60,8 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
-	      <main className='container'>
-	        <Route
+        <main className='container'>
+          <Route
             path='/sign-up'
             render={() => (
               <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -67,6 +72,11 @@ class App extends Component {
             render={() => (
               <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
             )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/home'
+            render={() => <Home msgAlert={this.msgAlert} user={user} />}
           />
           <AuthenticatedRoute
             user={user}
@@ -86,6 +96,41 @@ class App extends Component {
               <ChangePassword msgAlert={this.msgAlert} user={user} />
             )}
           />
+          <AuthenticatedRoute
+            user={user}
+            path='/create-post'
+            render={() => <CreatePost msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/posts'
+            render={() => <IndexPost msgAlert={this.msgAlert} user={user} />}
+          />
+          {/* <AuthenticatedRoute
+            user={user}
+            exact
+            path='/posts'
+            render={() => <IndexPost msgAlert={this.msgAlert} user={user} />}
+          /> */}
+          <AuthenticatedRoute
+            user={user}
+            path='/posts/:id/edit'
+            render={() => <UpdatePost msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/posts/:id'
+            render={() => <ShowPost msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/my-posts'
+            render={() => <MyPosts msgAlert={this.msgAlert} user={user} />}
+          />
+          {/* <Home /> */}
         </main>
       </Fragment>
     )
