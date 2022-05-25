@@ -3,6 +3,8 @@
     border-radius: 10px;
     padding: 1.5rem;
     margin: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .profilePicture {
@@ -18,4 +20,15 @@
     position: absolute;
     /* bottom: -12rem; */
     clip-path: circle(50%);
+}
+
+.form {
+    padding: 20px;
+}
+
+#shareBtn {
+    border: none;
+}
+#description {
+    border: none;
 }

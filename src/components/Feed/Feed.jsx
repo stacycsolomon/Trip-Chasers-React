@@ -6,8 +6,11 @@ import './Feed.css'
 const Feed = (props) => {
   return (
     <div className="feed">
-      <CreatePost {...props}/>
+      <div className="feedWrapper">
+        <CreatePost {...props}/>
+      </div>
       <IndexPost {...props} />
+
     </div>
   )
 }

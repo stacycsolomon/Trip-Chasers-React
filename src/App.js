@@ -127,7 +127,7 @@ class App extends Component {
           <AuthenticatedRoute
             user={user}
             exact
-            path='/my-posts'
+            path='/myposts'
             render={() => <MyPosts msgAlert={this.msgAlert} user={user} />}
           />
           {/* <Home /> */}

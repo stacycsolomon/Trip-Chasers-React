@@ -49,7 +49,7 @@ class CreatePost extends Component {
 
 	render () {
 	  return (
-	    <>
+	    <div className="form">
 	    <Form onSubmit={this.handleSubmit}>
 	      <Form.Group controlId='description'>
 	        <Form.Label>What&apos;s on your mind today?</Form.Label>
@@ -66,9 +66,9 @@ class CreatePost extends Component {
 	          <p>Add Image</p>
 	          <input type='url' name='img' placeholder='share url link to upload images' onChange={this.handleChange} />
 	        </div>
-	      <Button type='submit'>Submit</Button>
+	      <Button type='submit' id="shareBtn">Share</Button>
 	    </Form>
-	    </>
+	    </div>
 	  )
 	}
 }

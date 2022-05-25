@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { myPosts } from '../../api/post'
 import { Link } from 'react-router-dom'
+// import Button from 'react-bootstrap/Button'
 
 class MyPosts extends Component {
   constructor (props) {
