@@ -4,11 +4,11 @@ import Feed from '../components/Feed/Feed'
 import RightSide from '../components/RightSide/RightSide'
 import './home.css'
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div className="Home">
       <ProfileSide/>
-      <Feed/>
+      <Feed {...props}/>
       <RightSide/>
     </div>
   )
