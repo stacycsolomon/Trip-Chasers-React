@@ -24,8 +24,13 @@
 
 .form {
     padding: 20px;
+
 }
 
+input {
+    border-radius: 5px;
+    border-color: #ba6b6c;
+}
 #shareBtn {
     border: none;
 }

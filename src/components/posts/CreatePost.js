@@ -70,9 +70,9 @@ class CreatePost extends Component {
 	        <div className='pictures'>
 	          <img src={this.state.img} />
 	          <p>Add Image</p>
-	          <input type='url' name='img' placeholder='share url link to upload images' onChange={this.handleChange} />
+	          <input type='url' name='img' placeholder='share url link' onChange={this.handleChange} />
 	        </div>
-	      <Button type='submit' id="shareBtn">Share</Button>
+	      <Button style={ { backgroundColor: '#ba6b6c', border: 'none' }} type='submit' id="shareBtn">Share</Button>
 	    </Form>
 	    </div>
 	  )

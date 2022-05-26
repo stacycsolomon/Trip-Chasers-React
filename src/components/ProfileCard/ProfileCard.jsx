@@ -4,7 +4,8 @@ import './ProfileCard.css'
 
 const ProfileCard = (props) => {
   return (
-    <div className='ProfileCard'>My Profile
+    <div className='ProfileCard'>
+      <h4>My Profile</h4>
       <div className="ProfileImages">
         <img src={process.env.PUBLIC_URL + '/images/blank-profile-picture'} />
       </div>

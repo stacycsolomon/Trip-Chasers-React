@@ -45,7 +45,7 @@ function IndexPost (props) {
         <p>{post.description}</p>
         <img src={post.img} style={{ maxWidth: '75%', maxHeight: '75%', objectFit: 'cover' }}/>
         <>
-          <Link to={`/posts/${post._id}`}><Button>Go to Post</Button></Link>
+          <Link to={`/posts/${post._id}`}><Button style={ { backgroundColor: '#ba6b6c', border: 'none' }}>Go to Post</Button></Link>
         </>
       </div>
 		  )))
