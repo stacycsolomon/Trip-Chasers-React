@@ -63,15 +63,18 @@ class ShowPost extends Component {
     const { user, history, match } = this.props
     return (
       <div>
-        <h4>My Posts</h4>
+        <h4>Check out this post!</h4>
         <p>{description}</p>
-        <p>{img}</p>
+        <img
+          src={img} style={{ maxWidth: '75%', maxHeight: '75%', objectFit: 'cover' }}
+        />
 
         {user._id === owner._id && (
           <>
-            <Button onClick={this.handleDelete}>Delete Post
+            <Button onClick={this.handleDelete}>Delete Post</Button>
+            <Button
+              onClick={() => history.push(`/posts/${match.params.id}/edit`)}>Update Post
             </Button>
-            <Button onClick={() => history.push(`/posts/${match.params.id}/edit`)}>Update Post</Button>
           </>
         )}
       </div>

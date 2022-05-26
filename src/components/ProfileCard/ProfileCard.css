@@ -4,18 +4,19 @@
     flex-direction: column;
     position: relative;
     gap: 1rem;
+    padding: 20px;
 }
 
 .ProfileImages {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
 }
 
 .ProfileImages>img {
-    width: 12rem;
+    width: 10rem;
     position: absolute;
     bottom: -12rem;
     clip-path: circle(50%);
