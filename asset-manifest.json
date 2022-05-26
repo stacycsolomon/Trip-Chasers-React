@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Trip-Chasers-React/static/css/main.9d399fc1.chunk.css",
-    "main.js": "/Trip-Chasers-React/static/js/main.48fb4e45.chunk.js",
-    "main.js.map": "/Trip-Chasers-React/static/js/main.48fb4e45.chunk.js.map",
+    "main.css": "/Trip-Chasers-React/static/css/main.51f3d075.chunk.css",
+    "main.js": "/Trip-Chasers-React/static/js/main.78012669.chunk.js",
+    "main.js.map": "/Trip-Chasers-React/static/js/main.78012669.chunk.js.map",
     "runtime-main.js": "/Trip-Chasers-React/static/js/runtime-main.0020a42c.js",
     "runtime-main.js.map": "/Trip-Chasers-React/static/js/runtime-main.0020a42c.js.map",
     "static/js/2.324b72c3.chunk.js": "/Trip-Chasers-React/static/js/2.324b72c3.chunk.js",
     "static/js/2.324b72c3.chunk.js.map": "/Trip-Chasers-React/static/js/2.324b72c3.chunk.js.map",
     "index.html": "/Trip-Chasers-React/index.html",
-    "static/css/main.9d399fc1.chunk.css.map": "/Trip-Chasers-React/static/css/main.9d399fc1.chunk.css.map",
+    "static/css/main.51f3d075.chunk.css.map": "/Trip-Chasers-React/static/css/main.51f3d075.chunk.css.map",
     "static/js/2.324b72c3.chunk.js.LICENSE.txt": "/Trip-Chasers-React/static/js/2.324b72c3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0020a42c.js",
     "static/js/2.324b72c3.chunk.js",
-    "static/css/main.9d399fc1.chunk.css",
-    "static/js/main.48fb4e45.chunk.js"
+    "static/css/main.51f3d075.chunk.css",
+    "static/js/main.78012669.chunk.js"
   ]
 }
