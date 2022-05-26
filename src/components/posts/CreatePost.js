@@ -28,6 +28,7 @@ class CreatePost extends Component {
 	  createPost(this.state, user)
 	    .then((res) => {
 	      newAddPost({
+	        _id: res.data.post._id,
 	        description: res.data.post.description,
 	        img: res.data.post.img
 	      })
