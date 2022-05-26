@@ -65,7 +65,9 @@ class ShowPost extends Component {
       <div>
         <h4>Check out this post!</h4>
         <p>{description}</p>
-        <img src={img} style='max-width:75%;max-height:75%;object-fit:cover' />
+        <img
+          src={img} style={{ maxWidth: '75%', maxHeight: '75%', objectFit: 'cover' }}
+        />
 
         {user._id === owner._id && (
           <>

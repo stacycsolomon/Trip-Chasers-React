@@ -1,24 +1,17 @@
 /* eslint-disable no-lone-blocks */
 /* eslint-disable no-tabs */
 /* eslint-disable no-mixed-spaces-and-tabs */
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { indexPosts } from '../../api/post'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import './posts.css'
 
 function IndexPost (props) {
-  const [posts, setPosts] = useState([])
-
-  const handleAddPost = () => {
-    const newPost = posts[posts.length]
-    setPosts(posts => [...posts, newPost])
-  }
-
+  // const [posts, setPosts] = useState([])
+  const { user, msgAlert, posts, setPosts } = props
   const componentMounted = useRef(false)
-  useEffect((posts) => {
-    const { user, msgAlert } = props
-
+  useEffect(() => {
     if (componentMounted.current === false) {
       indexPosts(user)
         .then((res) => setPosts(res.data.posts))
@@ -40,14 +33,9 @@ function IndexPost (props) {
           })
         })
     }
-  }, [posts.length])
-
-  // capture post
-  // set state
-  // check if original post length has increased, then re-render
+  }, [])
 
   let postJSX
-  // check if original post length has increased, rerun
   { posts
     ? (postJSX = posts.map((post) => (
       <div className='posts' key={post._id}>
@@ -57,7 +45,7 @@ function IndexPost (props) {
         <p>{post.description}</p>
         <img src={post.img} style={{ maxWidth: '75%', maxHeight: '75%', objectFit: 'cover' }}/>
         <>
-          <Link to={`/posts/${post._id}`}><Button onClick={handleAddPost}>Go to Post</Button></Link>
+          <Link to={`/posts/${post._id}`}><Button>Go to Post</Button></Link>
         </>
       </div>
 		  )))

@@ -24,9 +24,14 @@ class CreatePost extends Component {
 
 	handleSubmit = (event) => {
 	  event.preventDefault()
-	  const { user, msgAlert, history } = this.props
-
+	  const { user, msgAlert, history, newAddPost } = this.props // render={() => <CreatePost newAddPost={this.addPost} msgAlert={this.msgAlert} user={user} />}
 	  createPost(this.state, user)
+	    .then((res) => {
+	      newAddPost({
+	        description: res.data.post.description,
+	        img: res.data.post.img
+	      })
+	    })
 	    .then(() => history.push('/home'))
 	    .then(() => {
 	      msgAlert({

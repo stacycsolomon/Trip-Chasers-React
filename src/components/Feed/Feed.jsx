@@ -4,6 +4,7 @@ import IndexPost from '../posts/IndexPost'
 import './Feed.css'
 
 const Feed = (props) => {
+  console.log(props)
   return (
     <div className="feed">
       <div className="feedWrapper">
