@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable no-tabs */
 import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
@@ -21,33 +22,49 @@ class App extends Component {
     super(props)
     this.state = {
       user: null,
-      msgAlerts: []
+      msgAlerts: [],
+      posts: []
     }
   }
 
-  setUser = (user) => this.setState({ user })
+	setUser = (user) => this.setState({ user })
 
-  clearUser = () => this.setState({ user: null })
+	clearUser = () => this.setState({ user: null })
 
-  deleteAlert = (id) => {
-    this.setState((state) => {
-      return { msgAlerts: state.msgAlerts.filter((msg) => msg.id !== id) }
-    })
+	deleteAlert = (id) => {
+	  this.setState((state) => {
+	    return { msgAlerts: state.msgAlerts.filter((msg) => msg.id !== id) }
+	  })
+	}
+
+	msgAlert = ({ heading, message, variant }) => {
+	  const id = uuid()
+	  this.setState((state) => {
+	    return {
+	      msgAlerts: [...state.msgAlerts, { heading, message, variant, id }]
+	    }
+	  })
+	}
+
+  newAddPost = (post) => {
+    const currentPosts = this.state.posts
+    currentPosts.push(post)
+    // currentPosts.unshift(post) // unshift adds the new element to the beginning of the array
+    return (this.setState({ posts: currentPosts }))
   }
 
-  msgAlert = ({ heading, message, variant }) => {
-    const id = uuid()
-    this.setState((state) => {
-      return {
-        msgAlerts: [...state.msgAlerts, { heading, message, variant, id }]
-      }
-    })
+  setPosts = (posts) => {
+    return this.setState({ posts: posts })
+  }
+
+  clearPosts = () => {
+    return this.setState({ posts: [] })
   }
 
   render () {
-    const { msgAlerts, user } = this.state
+	  const { msgAlerts, user, posts } = this.state
 
-    return (
+	  return (
       <Fragment>
         <Header user={user} />
         {msgAlerts.map((msgAlert) => (
@@ -76,7 +93,16 @@ class App extends Component {
           <AuthenticatedRoute
             user={user}
             path='/home'
-            render={() => <Home msgAlert={this.msgAlert} user={user} />}
+            render={() => (
+              <Home
+                newAddPost={this.newAddPost}
+                posts={posts}
+                setPosts={this.setPosts}
+                clearPosts={this.clearPosts}
+                msgAlert={this.msgAlert}
+                user={user}
+              />
+            )}
           />
           <AuthenticatedRoute
             user={user}
@@ -99,13 +125,30 @@ class App extends Component {
           <AuthenticatedRoute
             user={user}
             path='/create-post'
-            render={() => <CreatePost msgAlert={this.msgAlert} user={user} />}
+            render={() => (
+              <CreatePost
+                newAddPost={this.newAddPost}
+                posts={posts}
+                setPosts={this.setPosts}
+                clearPosts={this.clearPosts}
+                msgAlert={this.msgAlert}
+                user={user}
+              />
+            )}
           />
           <AuthenticatedRoute
             user={user}
             exact
             path='/posts'
-            render={() => <IndexPost msgAlert={this.msgAlert} user={user} />}
+            render={() => (
+              <IndexPost
+                posts={posts}
+                setPosts={this.setPosts}
+                clearPosts={this.clearPosts}
+                msgAlert={this.msgAlert}
+                user={user}
+              />
+            )}
           />
           {/* <AuthenticatedRoute
             user={user}
