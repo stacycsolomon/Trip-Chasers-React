@@ -2,6 +2,14 @@
 
 A social media app that connects like-minded travelers from across the globe to communicate, share their thoughts, post cool trip ideas, and more!
 
+## Links
+
+[Link](https://stacycsolomon.github.io/Trip-Chasers-React/) to deployed Client Application.
+
+[Link](https://fast-springs-02778.herokuapp.com) to deployed Back-end Application.
+
+[Link](https://github.com/stacycsolomon/Trip-Chasers-API) to API repository.
+
 ## User Stories 
 
 * As an unregistered user, I would like to sign up with email and password.
@@ -29,8 +37,18 @@ A social media app that connects like-minded travelers from across the globe to 
 ![Social Media App ERD](https://media.git.generalassemb.ly/user/41949/files/32c68d75-724a-431e-b06a-c5ea47ca7a11)
 
 
-## Questions
+## Technologies Used
+Utilized MERN Stack to build a full-stack application:
 
-1. Will I need to implement AWS for the image upload feature? Any suggestions for a simpler way of doing this?
-2. If I wanted users to follow other users, what would this relationship look like?
-3. Should I try to implement socket.io in the initial development stages of the project or leave that for last?
+* MongoDb/Mongoose
+* Express.js
+* React.js
+* Node.js
+
+Other technologies used:
+
+* Bootstrap
+* HTML/CSS
+* Javascript
+* Axios
+* Heroku for deployment of API

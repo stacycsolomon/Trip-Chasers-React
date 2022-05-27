@@ -33,6 +33,7 @@ class CreatePost extends Component {
 	        img: res.data.post.img
 	      })
 	    })
+	    .then(() => { this.setState({ description: '', img: '' }) })
 	    .then(() => history.push('/home'))
 	    .then(() => {
 	      msgAlert({
@@ -67,11 +68,13 @@ class CreatePost extends Component {
 	          onChange={this.handleChange}
 	        />
 	      </Form.Group>
+	        <Form onSubmit={this.handleSubmit}>
 	        <div className='pictures'>
-	          <img src={this.state.img} />
+	          {/* <img src={this.state.img} /> */}
 	          <p>Add Image</p>
-	          <input type='url' name='img' placeholder='share url link' onChange={this.handleChange} />
+	          <input type='url' name='img' value={this.state.img} placeholder='share url link' onChange={this.handleChange} />
 	        </div>
+	        </Form>
 	      <Button style={ { backgroundColor: '#ba6b6c', border: 'none' }} type='submit' id="shareBtn">Share</Button>
 	    </Form>
 	    </div>
