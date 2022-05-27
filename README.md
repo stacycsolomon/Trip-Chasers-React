@@ -20,9 +20,10 @@ A social media app that connects like-minded travelers from across the globe to 
 * As a signed in user, I would like to update a post on my wall.
 * As a signed in user, I would like to delete a post on my wall.
 * As a signed in user, I would like to see all my posts.
-* As a signed in user, I would like to view a list of other users and view their walls.
+
 
 ### Reach Goal(s)
+* View a list of other users and view their walls.
 * Allow users to comment on other users' posts.
 * Allow users to follow other users and view a newsfeed of those users' posts .
 * Allow users to like or upvote other users' posts.
