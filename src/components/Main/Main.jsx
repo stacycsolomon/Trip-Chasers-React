@@ -1,18 +1,16 @@
 import React from 'react'
 import CreatePost from '../posts/CreatePost'
 import IndexPost from '../posts/IndexPost'
-import './Feed.css'
 
-const Feed = (props) => {
+const Main = (props) => {
   return (
-    <div className="feed">
-      <div className="feedWrapper">
+    <div className="main">
+      <div className='shareBox'>
         <CreatePost {...props}/>
       </div>
       <IndexPost {...props} />
-
     </div>
   )
 }
 
-export default Feed
+export default Main

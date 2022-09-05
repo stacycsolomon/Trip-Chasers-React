@@ -5,7 +5,6 @@ import React, { useEffect, useRef } from 'react'
 import { indexPosts } from '../../api/post'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import './posts.css'
 
 function IndexPost (props) {
   // const [posts, setPosts] = useState([])
@@ -39,9 +38,6 @@ function IndexPost (props) {
   { posts
     ? (postJSX = posts.map((post) => (
       <div className='posts' key={post._id}>
-        <div className='profilePicture'>
-          <img src={process.env.PUBLIC_URL + '/images/blank-profile-picture'} />
-        </div>
         <p>{post.description}</p>
         <img src={post.img} style={{ maxWidth: '75%', maxHeight: '75%', objectFit: 'cover' }}/>
         <>
@@ -53,8 +49,7 @@ function IndexPost (props) {
 
   return (
     <>
-      <h3>All posts:</h3>
-      <div>
+      <div className="all-posts">
         <ul style={{ display: 'flex', flexDirection: 'column-reverse' }}>{postJSX}</ul>
       </div>
     </>

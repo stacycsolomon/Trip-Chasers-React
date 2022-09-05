@@ -1,9 +1,243 @@
 @import '~bootstrap/scss/bootstrap';
 
-.root {
-    background-color: '#ffcccb';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    margin: 0;
+    max-width: 100%;  
 }
 
 body {
-    background-color: #e7dfdfeb;
+    background-color: #efefef;
 }
+
+.nav-bar {
+    letter-spacing: 2px;
+    // margin: 0 20px;
+}
+
+.nav-title {
+    color: #efefef;
+    margin: 0 50px;
+}
+
+ // ------------- Homepage Layout ------------- //
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0;
+    width: 100%;
+}
+
+.main {
+    flex-basis: 52%;
+}
+
+ // ------------- Profile - Side ------------- //
+.profileSide {
+    flex-basis: 20%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+}
+
+.profileWrapper {
+    padding: 20px;
+}
+
+.profileList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.profileListItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: rgb(68, 68, 68);
+}
+
+.profileIcon {
+    margin-right: 15px;
+}
+
+
+// -------------- Right - Side --------------- //
+
+.rightSide {
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.right-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.right-title a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #ba6b6c
+}
+
+.right-title h4 {
+    font-weight: 600;
+    font-size: 16px
+}
+
+.event {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.event a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #ba6b6c
+}
+
+.event p {
+    font-size: 13px;
+}
+
+.left-event {
+    border-radius: 10px;
+    height: 65px;
+    width: 65px;
+    margin-right: 15px;
+    padding-top: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+}
+
+.left-event span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ba6b6c;
+    color:#fff;
+    font-size: 10px;
+    padding: 4px 0;
+}
+
+
+
+
+.posts {
+    background-color: #fdfdfd;
+    padding: 1.5rem;
+    margin: 10px;
+}
+
+ul {
+    padding-left: 0;
+
+}
+
+.profilePicture {
+    position: relative;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: right;
+    justify-content: right;
+}
+
+.profilePicture>img {
+    width: 6rem;
+    position: absolute;
+    /* bottom: -12rem; */
+    clip-path: circle(50%);
+}
+
+input {
+    border-radius: 5px;
+}
+
+#shareBtn {
+    border: none;
+}
+
+#description {
+    border: none;
+}
+
+.right-nav-bar {
+    position: 'absolute';
+    right: 100px;
+
+}
+
+/* ---------------- Share ----------------- */
+
+.form {
+    background-color: #fff;
+    padding: 2rem;
+    margin: 0 10px 10px;
+    border-radius: 10px;
+}
+
+.shareProfileImg {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.shareInput {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.shareButton {
+    padding: 7px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.shareHr {
+    margin: 20px;
+}
+
+.shareBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shareOptions {
+    display: flex;
+    cursor: pointer;
+    
+}
+.shareOptions span {
+    color: rgb(68, 68, 68);  ;
+    font-size: 14px;
+}
+
+.shareIcon {
+    font-size: 14px;
+    margin-right: 5px;
+    margin-left: 20px;
+}
+ 

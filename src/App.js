@@ -12,10 +12,10 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import CreatePost from './components/posts/CreatePost'
 import IndexPost from './components/posts/IndexPost'
-import Home from './home/home'
 import UpdatePost from './components/posts/UpdatePost'
 import ShowPost from './components/posts/ShowPost'
 import MyPosts from './components/posts/MyPosts'
+import Home from './components/Home/Home'
 
 class App extends Component {
   constructor (props) {

@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { createPost } from '../../api/post'
 import { withRouter, Redirect } from 'react-router-dom'
+import { PermMedia, Room, EmojiEmotions } from '@material-ui/icons'
 
 class CreatePost extends Component {
   constructor (props) {
@@ -56,28 +57,52 @@ class CreatePost extends Component {
 
 	render () {
 	  return (
-	    <div className="form">
-	    <Form onSubmit={this.handleSubmit}>
+	    <Form onSubmit={this.handleSubmit} className='form'>
 	      <Form.Group controlId='description'>
-	        <Form.Label>What&apos;s on your mind today?</Form.Label>
-	        <Form.Control
-	          required
-	          name='description'
-	          value={this.state.description}
-	          placeholder='Share your thoughts'
-	          onChange={this.handleChange}
-	        />
-	      </Form.Group>
-	        <Form onSubmit={this.handleSubmit}>
-	        <div className='pictures'>
-	          {/* <img src={this.state.img} /> */}
-	          <p>Add Image</p>
-	          <input type='url' name='img' value={this.state.img} placeholder='share url link' onChange={this.handleChange} />
+	        <div className='shareInput'>
+	          <img
+	            src={process.env.PUBLIC_URL + '/images/blank-profile-picture'}
+	            className='shareProfileImg'
+	          />
+	          <Form.Control
+	            required
+	            name='description'
+	            value={this.state.description}
+	            placeholder="What's on your mind today?"
+	            onChange={this.handleChange}
+	          />
 	        </div>
-	        </Form>
-	      <Button style={ { backgroundColor: '#ba6b6c', border: 'none' }} type='submit' id="shareBtn">Share</Button>
+	      </Form.Group>
+	      <hr className='shareHr' />
+	      {/* <Form onSubmit={this.handleSubmit}> */}
+	      <div className='shareBottom'>
+	        <div className='shareOptions'>
+	          <PermMedia className='shareIcon' />
+	          <span>Upload Image</span>
+	          <Room className='shareIcon' />
+	          <span>Tag Location</span>
+	          <EmojiEmotions className='shareIcon' />
+	          <span>Feelings</span>
+	        </div>
+	        {/* <img src={this.state.img} /> */}
+	        {/* <input
+	                type='url'
+	                name='img'
+	                value={this.state.img}
+	                placeholder='paste img url link here'
+	                onChange={this.handleChange}
+	              /> */}
+	        <div>
+	          <Button
+	            style={{ backgroundColor: '#ba6b6c', border: 'none' }}
+	            type='submit'
+	            className='shareButton'>
+							Share
+	          </Button>
+	        </div>
+	      </div>
+	      {/* </Form> */}
 	    </Form>
-	    </div>
 	  )
 	}
 }
