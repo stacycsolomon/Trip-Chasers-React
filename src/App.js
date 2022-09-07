@@ -46,14 +46,14 @@ class App extends Component {
 	  })
 	}
 
-  newAddPost = (post) => {
+  newAddPost = (post, user) => {
     const currentPosts = this.state.posts
     currentPosts.push(post)
     // currentPosts.unshift(post) // unshift adds the new element to the beginning of the array
     return (this.setState({ posts: currentPosts }))
   }
 
-  setPosts = (posts) => {
+  setPosts = (posts, user) => {
     return this.setState({ posts: posts })
   }
 

@@ -38,11 +38,36 @@ function IndexPost (props) {
   { posts
     ? (postJSX = posts.map((post) => (
       <div className='posts' key={post._id}>
-        <p>{post.description}</p>
-        <img src={post.img} style={{ maxWidth: '75%', maxHeight: '75%', objectFit: 'cover' }}/>
-        <>
-          <Link to={`/posts/${post._id}`}><Button style={ { backgroundColor: '#ba6b6c', border: 'none' }}>Go to Post</Button></Link>
-        </>
+        <div className='postWrapper'>
+          <div className='postTop'>
+            <img
+              src={process.env.PUBLIC_URL + '/images/blank-profile-picture'}
+              className='postProfileImg'
+              alt=''
+            />
+            <span className='postUsername'>{post.owner?.username}</span>
+          </div>
+          <div className='postCenter'>
+            <p>{post.description}</p>
+            <img src={post.img} className="postImg" />
+          </div>
+        </div>
+        <div className='postBottom'>
+          <div className='postBottomLeft'>
+            <img className='likeIcon' src='images/like.png' alt ='' />
+            <span className='likes'>5 likes</span>
+          </div>
+          <div className='postBottomRight'>
+            <>
+              <Link to={`/posts/${post._id}`}>
+                <Button className='postButton'
+                  style={{ backgroundColor: '#ba6b6c', border: 'none' }} >
+										View post
+                </Button>
+              </Link>
+            </>
+          </div>
+        </div>
       </div>
 		  )))
     : (postJSX = 'No posts, create some') }
